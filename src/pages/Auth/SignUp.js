@@ -25,7 +25,7 @@ const SignUp = () => {
     const user = userCredential.user;
   
    
-     navigate('/login')
+     navigate('/')
    
   })
   .catch((error) => {
@@ -67,7 +67,7 @@ const SignUp = () => {
       
     </Form>
         </div>
-      <p className='text-center'>Already have an account ?  <Link to={'/login'}>
+      <p className='text-center'>Already have an account ?  <Link to={'/'}>
         Login
       </Link> </p>
      

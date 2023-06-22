@@ -23,7 +23,7 @@ const Login = () => {
     const user = userCredential.user;
   
    
-     navigate('/')
+     navigate('/home/inbox')
    
   })
   .catch((error) => {
