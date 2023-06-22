@@ -4,6 +4,7 @@ import { Routes, Route  } from 'react-router-dom';
 import Compose from '../compose/Compose';
 import Inbox from '../inbox/Inbox';
 import Sent from '../sent/Sent';
+import EmailDetails from '../EmailsDetails/EmailDetails';
 const Home = () => {
   
   return (
@@ -11,11 +12,12 @@ const Home = () => {
     <div className=''>
     <Sidebar />
     </div>
-    <div className='w-75 mx-5'>
+    <div className='w-100'>
     <Routes>
       <Route path='compose' element={<Compose />} />
       <Route path='inbox' element={<Inbox />} />
       <Route path='sent' element={<Sent />} />
+      <Route path='email-details/:id' element={<EmailDetails />} />
      </Routes>
     </div>
      

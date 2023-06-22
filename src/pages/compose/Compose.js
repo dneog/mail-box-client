@@ -50,7 +50,7 @@ const handleSubmit= (e)=> {
 }
 
   return (
-    <div className='w-75'>
+    <div className='w-75 mx-5'>
     <form onSubmit={handleSubmit}>
         <input type="email" placeholder='To' className='border-0 border-bottom fs-5 mt-4' style={{outline: 'none'}} value={userEmail} onChange={(e)=> setUserEmail(e.target.value)} required />
         <br />
