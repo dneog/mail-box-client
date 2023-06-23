@@ -13,7 +13,9 @@ const Sent = () => {
 const [emails, setEmails]= useState([])
 const dispatch= useDispatch()
 const authUser= useSelector(selectUserID)
+const [isLoading, setIsLoading]= useState(false)
 useEffect(() => {
+  setIsLoading(true)
   const getCollections = () => {
     const docRef = collection(db, 'mail');
     const q = query(docRef, orderBy('createdAt', 'desc'));
@@ -26,6 +28,7 @@ useEffect(() => {
       const clicks = allData.filter((data) => data.userID=== authUser)
      
       setEmails(allData);
+      setIsLoading(false)
      
      
     
@@ -43,15 +46,15 @@ useEffect(() => {
   return (
     <div >
       <div className=''>
-      <p className='px-5 fs-5 py-2 border-bottom ' style={{marginBottom:2}}>All Mails</p>
+      <p className='px-5 fs-5 py-2 border-bottom ' style={{marginBottom:2}}>Sent Mails</p>
       </div>
-      {emails.length===0 && <Spinner animation="border" className='d-flex m-auto my-5' />}
+      {isLoading && <Spinner animation="border" className='d-flex m-auto my-5' /> }
+      {!isLoading && emails.length===0 && <p className='ps-5 pt-2'>No Sent Message Found</p>}
+      {/* {emails.length===0 && <Spinner animation="border" className='d-flex m-auto my-5' />} */}
 
       {emails.map(({id, data})=> {
        if(data.userID===authUser){
         return <SentMails key={id} id={id} mail={data.mail} isClicked={data.isClicked} userID={data.userID} myEmail={data.myEmail} subject={data.subject} message={data.message} createdAt={data.createdAt}  />
-       }else{
-        <p>No Sent Email Found</p>
        }
          
         

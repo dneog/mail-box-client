@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
-import { doc, getDoc } from "firebase/firestore";
+import { deleteDoc, doc, getDoc } from "firebase/firestore";
 import { db } from '../../firebase/Config';
 import Spinner from 'react-bootstrap/Spinner';
 import {useSelector} from 'react-redux';
@@ -38,6 +38,15 @@ if (docSnap.exists()) {
   const backto=()=> {
     navigate('/home/sent')
   }
+
+  const deleteProduct= async (id)=> {
+    
+    await deleteDoc(doc(db, "mail", id));
+   navigate('/home/sent')
+  
+  
+ 
+}
   return (
     <div>
      {mailDetails === null ? (
@@ -46,7 +55,7 @@ if (docSnap.exists()) {
         <div className='border m-3 mx-4 w-75'>
           <div className='d-flex align-items-center border-bottom justify-content-between px-3'>
          <p onClick={backto} className='pt-2' style={{cursor:'pointer'}}><i class="bi bi-arrow-left-short "></i>Back</p>
-         <p className='pt-2'><i class="bi bi-trash3 text-danger"></i> Delete</p>
+         <p className='pt-2' style={{cursor:'pointer'}} onClick={()=> deleteProduct(id)}><i class="bi bi-trash3 text-danger"></i> Delete</p>
         
           </div>
           <div>

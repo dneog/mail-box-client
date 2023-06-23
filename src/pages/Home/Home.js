@@ -7,6 +7,7 @@ import Sent from '../sent/Sent';
 import Unread from '../unread/Unread'
 import EmailDetails from '../EmailsDetails/EmailDetails';
 import SentEmailDetails from '../EmailsDetails/SentEmailDetails';
+import Profile from '../Profile/Profile';
 const Home = () => {
   
   return (
@@ -17,6 +18,7 @@ const Home = () => {
     <div className='w-100'>
     <Routes>
       <Route path='compose' element={<Compose />} />
+      <Route path='profile' element={<Profile />} />
       <Route path='inbox' element={<Inbox />} />
       <Route path='sent' element={<Sent />} />
       <Route path='unread' element={<Unread />} />

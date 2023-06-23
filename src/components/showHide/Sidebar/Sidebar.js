@@ -25,7 +25,7 @@ const Sidebar = () => {
         <li className='hov'>
         <NavLink to={'/home/inbox'}>
         <div className='d-flex justify-content-between'>
-   Inbox
+            Inbox
        <span className='pe-2'><span style={{paddingLeft:4,fontSize:14, paddingRight:4}} className='rounded bg-primary primary text-white '>{DataTick}</span> unread</span>
         </div>
         </NavLink>
@@ -41,11 +41,11 @@ const Sidebar = () => {
             Sent
             </NavLink>
         </li>
+       
         <li>
-            <a href="#">All Mails</a>
-        </li>
-        <li>
-            <a href="#">Profile</a>
+        <NavLink to={'/home/profile'}>
+            Profile
+            </NavLink>
         </li>
         
     </ul>
