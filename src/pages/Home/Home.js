@@ -4,7 +4,9 @@ import { Routes, Route  } from 'react-router-dom';
 import Compose from '../compose/Compose';
 import Inbox from '../inbox/Inbox';
 import Sent from '../sent/Sent';
+import Unread from '../unread/Unread'
 import EmailDetails from '../EmailsDetails/EmailDetails';
+import SentEmailDetails from '../EmailsDetails/SentEmailDetails';
 const Home = () => {
   
   return (
@@ -17,7 +19,9 @@ const Home = () => {
       <Route path='compose' element={<Compose />} />
       <Route path='inbox' element={<Inbox />} />
       <Route path='sent' element={<Sent />} />
+      <Route path='unread' element={<Unread />} />
       <Route path='email-details/:id' element={<EmailDetails />} />
+      <Route path='sent-email-details/:id' element={<SentEmailDetails />} />
      </Routes>
     </div>
      

@@ -24,7 +24,7 @@
   }
   
   #wrapper.toggled #sidebar-wrapper {
-    width: 250px;
+    width:250px;
   }
   
   #page-content-wrapper {
@@ -66,6 +66,12 @@
     color: #fff;
     background: rgba(255, 255, 255, 0.2);
   }
+  /* .hov:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: -15px;
+  } */
   
   .sidebar-nav li a:active, .sidebar-nav li a:focus {
     text-decoration: none;

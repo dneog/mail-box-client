@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { db } from '../../firebase/Config';
 
 
-const AllMails = ({mail,id, subject,userID, myEmail,  message, isClicked, createdAt}) => {
+const SentMails = ({mail,id, subject, userID, myEmail,  message, isClicked, createdAt}) => {
 const navigate= useNavigate()
 
 
@@ -17,13 +17,13 @@ const navigate= useNavigate()
       subject: subject,
       message: message,
       userID: userID,
-      isClicked: false,
       myEmail: myEmail,
+      isClicked: isClicked,
       createdAt: createdAt
      
       });
      
-            navigate(`/home/email-details/${id}`)
+            navigate(`/home/sent-email-details/${id}`)
             
     }
 
@@ -39,12 +39,12 @@ const navigate= useNavigate()
    
     <div className='mx-5 d-flex border-bottom see' style={{cursor:"pointer"}} onClick={handleMail}>
     <div style={{width:20}}>
-    {isClicked && <p style={{fontSize:9, marginTop:15, color:'#00d4ff' }}><i class="bi bi-circle-fill" ></i></p>}
+   
     </div>
     <div style={{width:240}} >
         <p className='' style={{marginBottom: -5, marginTop:8}}>
         
-       <b>{myEmail}</b> 
+       <b>{mail}</b> 
         </p>
     </div>
     <div className='d-flex' style={{width:750}}>
@@ -68,4 +68,4 @@ const navigate= useNavigate()
   )
 }
 
-export default AllMails
+export default SentMails

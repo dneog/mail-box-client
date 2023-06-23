@@ -20,7 +20,8 @@ const Header = () => {
       if(user){
         dispatch(ADD_ACTIVE_USER({
           email: user.email,
-          userID: user.uid
+          userID: user.uid,
+          userName: user.displayName
         }))
       }else{
         dispatch(REMOVE_ACTIVE_USER())

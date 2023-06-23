@@ -36,7 +36,7 @@ if (docSnap.exists()) {
   }, [])
 
   const backto=()=> {
-    navigate('/home/inbox')
+    navigate('/home/sent')
   }
   return (
     <div>
@@ -56,8 +56,8 @@ if (docSnap.exists()) {
           <div className='d-flex mx-3 mt-2'>
           <i class="bi bi-person-circle" style={{fontSize:35}}></i>
           <div>
-         <p className='ps-3'  style={{zIndex:999, fontWeight:500, paddingTop:4}}>{mailDetails.myEmail}</p>
-         <p style={{marginTop:-18, fontSize:14}}  className='ps-3'>To: {userEmail}</p>
+         <p className='ps-3'  style={{zIndex:999, fontWeight:500, paddingTop:4}}>{mailDetails.mail}</p>
+         <p style={{marginTop:-18, fontSize:14}}  className='ps-3'>From: {userEmail}</p>
 
          <div className='pt-1'>
             <p className='ps-3'>{mailDetails.message}</p>
