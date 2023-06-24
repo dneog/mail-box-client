@@ -37,11 +37,11 @@ useEffect(() => {
 
   getCollections();
 
-  const intervalId = setInterval(getCollections, 2000);
-  console.log(intervalId);
-return () => {
-  clearInterval(intervalId);
-}
+//   const intervalId = setInterval(getCollections, 2000);
+//   console.log(intervalId);
+// return () => {
+//   clearInterval(intervalId);
+// }
 }, [dispatch]);
 
   
