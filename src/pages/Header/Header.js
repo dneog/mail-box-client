@@ -43,7 +43,7 @@ const Header = () => {
   return (
     <Navbar className="bg-body-tertiary text-decoration-none">
       <Container>
-        <Navbar.Brand href="/home">Mail box</Navbar.Brand>
+        <Navbar.Brand>Mail box</Navbar.Brand>
         
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
