@@ -5,7 +5,7 @@ import {getFirestore} from "firebase/firestore";
 import {getStorage} from 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: process.env.REACT_FIREBASE_APP_API_KEY,
+  apiKey: process.env.USERDATA_API_KEY,
   authDomain: "mail-box-client-5c3c3.firebaseapp.com",
   projectId: "mail-box-client-5c3c3",
   storageBucket: "mail-box-client-5c3c3.appspot.com",
