@@ -7,13 +7,15 @@ import {auth} from '../../firebase/Config';
 import {signOut } from "firebase/auth";
 import {  onAuthStateChanged } from "firebase/auth";
 import {useDispatch, useSelector} from 'react-redux';
-import { ADD_ACTIVE_USER, REMOVE_ACTIVE_USER } from '../../redux/slice/AuthSlice';
+import { ADD_ACTIVE_USER, REMOVE_ACTIVE_USER, selectIsLoggedIn } from '../../redux/slice/AuthSlice';
 import OnLogin, { OnLogout } from '../../components/showHide/ShowHide';
 
 
 const Header = () => {
   const navigate= useNavigate();
   const dispatch= useDispatch();
+
+  const checkLoggedIn= useSelector(selectIsLoggedIn)
 
   useEffect(()=> {
     onAuthStateChanged(auth, (user)=> {
@@ -51,7 +53,8 @@ const Header = () => {
         <a class="nav-link" aria-current="page" href="/">Login</a>
         </OnLogout>
        
-        <a class="nav-link " href="/home">Home</a>
+        { checkLoggedIn && <a class="nav-link " href="/home">Home</a>}
+
         <OnLogin>
         <a class="nav-link" style={{cursor: 'pointer'}} onClick={userLogOut}>Logout</a>
         </OnLogin>
